@@ -18,7 +18,7 @@ def start(message):
 def echo_message(message):
     bot.reply_to(message, message.text)
 
-
+server = Flask(__name__)
 @server.route('/' + TOKEN, methods=['POST'])
 def getMessage():
     bot.process_new_updates([telebot.types.Update.de_json(request.stream.read().decode("utf-8"))])
